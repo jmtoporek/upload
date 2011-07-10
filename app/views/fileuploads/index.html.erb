@@ -1,0 +1,23 @@
+<h1>Listing fileuploads</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fileuploads.each do |fileupload| %>
+  <tr>
+    <td><%= fileupload.name %></td>
+    <td><%= link_to 'Show', fileupload %></td>
+    <td><%= link_to 'Edit', edit_fileupload_path(fileupload) %></td>
+    <td><%= link_to 'Destroy', fileupload, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fileupload', new_fileupload_path %>
